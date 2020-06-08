@@ -244,3 +244,17 @@ main {
   
   z-index: 2;
 }
+
+
+@media (max-width:600px){
+    form{
+
+        width: 20rem;
+    }
+    input[type='text']{
+        width: 17rem;
+    }
+    input[type='password']{
+        width: 17rem;
+    }
+}
