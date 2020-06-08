@@ -20,7 +20,7 @@ $('#logOut').on('click',(e)=>{
 // AJAX call to fetch data using axios library.
 const getList=async ()=>{
     try{
-        const res=await axios.get('http://jsonplaceholder.typicode.com/todos');
+        const res=await axios.get('https://jsonplaceholder.typicode.com/todos');
         const lists=res.data;
         console.log(lists);
         let listcontent='';
