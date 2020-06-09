@@ -48,6 +48,8 @@ let checkedCount=0;
 
 const alertPromise= ()=>{
      return new Promise((resolve,reject)=>{
+
+         
         if(checkedCount===5){
             resolve(checkedCount)
         }
@@ -69,11 +71,23 @@ const promiseCall=()=>{
 
 getList();
 
-$('#todoList').on('click','.checkbox',function(e){
-    console.log('checked');
-    checkedCount++; 
-    $(this).parent().addClass('disabledList');
+$('#todoList').on('change','.checkbox',function(e){
+    if($(this).prop('checked')===true){
+        console.log('checked');
+        checkedCount++; 
+        $(this).parent().addClass('active');
+    }
+    else{
+        checkedCount--;
+        console.log('unchecked');
+        $(this).parent().removeClass('active');
+    }
+    
     promiseCall();
+
+
 });
+
+
 
 
